@@ -17,14 +17,11 @@ import blue_walnut.TrSever.model.enums.ServiceType;
 import blue_walnut.TrSever.model.enums.StatusType;
 import blue_walnut.TrSever.repository.PaymentRepository;
 import blue_walnut.TrSever.repository.TokenRepository;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.InitBinder;
 
 import java.time.LocalDateTime;
 import java.util.Calendar;
@@ -44,7 +41,6 @@ public class TrService {
 
     private final TokenRepository tokenRepository;
     private final PaymentRepository paymentRepository;
-    @InitBinder
 
     @Transactional
     public String tokenRegistry(CardInfo cardInfo) {
@@ -63,6 +59,7 @@ public class TrService {
         } catch (Exception e) {
             trLogService.tokenLogSave(StatusType.FL, cardInfo.userCi(), e.getMessage());
         }
+
         return "토큰 발급 실패";
     }
 

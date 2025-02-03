@@ -11,10 +11,13 @@ public enum ErrorCode {
     // 토큰 서버 관련 에러
     CARDINFO_DECRYPTION_FAILED("TKN_001", "카드 정보 복호화에 실패했습니다"),
     CARDINFO_ENCRYPTION_FAILED("TKN_002", "카드 정보 암호화에 실패했습니다"),
-    TOKEN_REGISTRATION_FAILED("TKN_003", "토큰 발급 실패"),
-    TOKEN_VERIFICATION_FAILED("TKN_004", "토큰 처리 실패"),
-    TOKEN_ALREADY_USED("TKN_005", "이미 사용된 토큰입니다"),
-    TOKEN_NOT_FOUND("TKN_006", "토큰 조회 실패"),
+    CARDINFO_VALIDATE_FAILED("TKN_003", "유효하지 않은 카드입니다"),
+    TOKEN_REGISTRATION_FAILED("TKN_004", "토큰 발급 실패"),
+    TOKEN_VERIFICATION_FAILED("TKN_005", "토큰 처리 실패"),
+    TOKEN_ALREADY_USED("TKN_006", "이미 사용된 토큰입니다"),
+    TOKEN_NOT_FOUND("TKN_007", "토큰을 찾을 수 없습니다"),
+    TOKEN_EXPIRED("TKN_008", "토큰의 유효기간이 만료되었습니다"),
+
 
     // 결제 서버 관련 에러
     PAY_DUPLICATE("PAY_001", "이미 처리된 결제 요청입니다"),

@@ -18,7 +18,6 @@ public class TrController {
 
     private final TrService trService;
 
-
     @PostMapping("/tokenRegistry")
     public String tokenRegistry( @Valid @RequestBody CardInfo cardInfo, BindingResult bindingResult) {
         return trService.tokenRegistry(cardInfo);

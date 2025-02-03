@@ -3,7 +3,6 @@ package blue_walnut.TrSever.service;
 import blue_walnut.TrSever.domain.Payment;
 import blue_walnut.TrSever.domain.TokenRegistry;
 import blue_walnut.TrSever.domain.TrLog;
-import blue_walnut.TrSever.model.CardInfo;
 import blue_walnut.TrSever.model.PaymentRes;
 import blue_walnut.TrSever.model.enums.ServiceType;
 import blue_walnut.TrSever.model.enums.StatusType;
@@ -18,7 +17,6 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
-import java.util.Optional;
 
 @Slf4j
 @Service
