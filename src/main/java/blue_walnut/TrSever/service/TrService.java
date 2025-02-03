@@ -3,7 +3,7 @@ package blue_walnut.TrSever.service;
 import blue_walnut.TrSever.client.IssuerClient;
 import blue_walnut.TrSever.client.TspClient;
 import blue_walnut.TrSever.domain.Payment;
-import blue_walnut.TrSever.domain.TokenRegistry;
+import blue_walnut.TrSever.domain.Token;
 import blue_walnut.TrSever.domain.TrLog;
 import blue_walnut.TrSever.exception.ErrorCode;
 import blue_walnut.TrSever.exception.PaymentException;
@@ -95,8 +95,8 @@ public class TrService {
         return TID_PREFIX + String.format("%015d", Calendar.getInstance().getTimeInMillis());
     }
 
-    private TokenRegistry createTokenRegistry(String userCi, Long tokenSrl) {
-        return TokenRegistry.builder()
+    private Token createTokenRegistry(String userCi, Long tokenSrl) {
+        return Token.builder()
                 .userCi(userCi)
                 .tokenSrl(tokenSrl)
                 .isUsed(false)

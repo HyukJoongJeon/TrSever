@@ -1,7 +1,7 @@
 package blue_walnut.TrSever.service;
 
 import blue_walnut.TrSever.domain.Payment;
-import blue_walnut.TrSever.domain.TokenRegistry;
+import blue_walnut.TrSever.domain.Token;
 import blue_walnut.TrSever.domain.TrLog;
 import blue_walnut.TrSever.model.PaymentRes;
 import blue_walnut.TrSever.model.enums.ServiceType;
@@ -55,7 +55,7 @@ public class TrLogService {
             payment.setDepositedAt(result.depositedAt());
             payment.setErrCode(result.errCode());
 
-            TokenRegistry token = tokenRepository.findByTokenSrl(payment.getTokenSrl()).get();
+            Token token = tokenRepository.findByTokenSrl(payment.getTokenSrl()).get();
             token.setUpdatedAt(LocalDateTime.now());
             token.setIsUsed(true);
             tokenRepository.save(token);
@@ -63,6 +63,7 @@ public class TrLogService {
 
         paymentRepository.save(payment);
 
+        trLog.setIssuerTid(result.issuerTid());
         trLog.setStatusType(statusType);
         trLog.setErrMsg(errMsg);
         trLog.setUpdatedAt(LocalDateTime.now());

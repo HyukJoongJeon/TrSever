@@ -27,6 +27,9 @@ public class TrLog {
     private StatusType statusType;
 
     private String trTid;
+    private String issuerTid;
+    private Long tokenSrl;
+
     private Long amount;
     private String errMsg;
     private LocalDateTime createdAt;

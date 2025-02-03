@@ -1,6 +1,5 @@
 package blue_walnut.TrSever.domain;
 
-import blue_walnut.TrSever.model.enums.StatusType;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -12,7 +11,7 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class TokenRegistry {
+public class Token {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long srl;
@@ -21,5 +20,4 @@ public class TokenRegistry {
     private Boolean isUsed;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
-
 }
