@@ -50,6 +50,7 @@ public class TrLogService {
         payment.setErrMsg(errMsg);
 
         if (ObjectUtils.isNotEmpty(result)) {
+            trLog.setIssuerTid(result.issuerTid());
             payment.setIssuerTid(result.issuerTid());
             payment.setToken(result.token());
             payment.setDepositedAt(result.depositedAt());
@@ -63,7 +64,6 @@ public class TrLogService {
 
         paymentRepository.save(payment);
 
-        trLog.setIssuerTid(result.issuerTid());
         trLog.setStatusType(statusType);
         trLog.setErrMsg(errMsg);
         trLog.setUpdatedAt(LocalDateTime.now());
